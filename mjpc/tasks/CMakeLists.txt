@@ -53,6 +53,7 @@ add_custom_target(
   COMMAND patch -o ${CMAKE_CURRENT_BINARY_DIR}/swimmer/swimmer_modified.xml
           ${CMAKE_CURRENT_BINARY_DIR}/swimmer/swimmer.xml
           <${CMAKE_CURRENT_SOURCE_DIR}/swimmer/swimmer.xml.patch
+  # (CUSTOM) gymnasium_swimmer
   # walker
   COMMAND ${CMAKE_COMMAND} -E copy
           ${dm_control_SOURCE_DIR}/dm_control/suite/walker.xml

@@ -46,7 +46,7 @@ class CrossEntropyPlanner : public Planner {
   // allocate memory
   void Allocate() override;
 
-  // reset memory to zeros
+  // reset  to zeros
   void Reset(int horizon,
              const double* initial_repeated_action = nullptr) override;
 

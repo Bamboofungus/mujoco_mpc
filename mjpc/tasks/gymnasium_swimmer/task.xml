@@ -1,0 +1,47 @@
+<mujoco model="Swimmer">
+  <include file="../common.xml" />
+  <include file="gymnasium_swimmer.xml" />
+
+  <!-- Setting from mujoco_mpc swimmer task -->
+  <custom>
+    <!-- agent -->
+    <numeric name="agent_planner" data="2" />
+    <numeric name="agent_horizon" data="10" />
+    <numeric name="agent_timestep" data="0.04" />
+    <numeric name="agent_integrator" data="2" />
+    <numeric name="agent_policy_width" data="0.0015" />
+    <numeric name="sampling_spline_points" data="10" />
+    <numeric name="sampling_exploration" data="0.05" />
+    <numeric name="gradient_spline_points" data="10" />
+
+    <!-- estimator -->
+    <numeric name="estimator" data="0" />
+    <numeric name="estimator_sensor_start" data="2" />
+    <numeric name="estimator_number_sensor" data="8" />
+    <numeric name="estimator_timestep" data="0.04" />
+    <numeric name="batch_configuration_length" data="3" />
+    <numeric name="batch_scale_prior" data="1.0e-3" />
+  </custom>
+
+  <sensor>
+    <!-- cost (adapted from Gymnasium swimmer's default reward) -->
+    <user name="Control" dim="2" user="0 0.0001 0 1" />
+    <user name="VelocityX" dim="1" user="-1 10 0 10 0.04" />
+
+    <!-- estimator -->
+    <jointpos name="angle_free_body" joint="free_body_rot" />
+    <jointpos name="angle_motor1" joint="motor1_rot" />
+    <jointpos name="angle_motor2" joint="motor2_rot" />
+    <jointvel name="velocity_x_tip" joint="slider1" />
+    <jointvel name="velocity_y_tip" joint="slider2" />
+    <jointvel name="angular_vel_free_body" joint="free_body_rot" />
+    <jointvel name="angular_vel_motor1" joint="motor1_rot" />
+    <jointvel name="angular_vel_motor2" joint="motor2_rot" />
+
+    <!-- trace -->
+    <framelinvel name="trace0" objtype="body" objname="torso"/>
+
+    <!-- residual -->
+    <framelinvel name="torso_linvel" objtype="body" objname="torso"/>
+  </sensor>
+</mujoco>

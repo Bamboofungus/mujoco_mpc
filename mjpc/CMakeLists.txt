@@ -74,6 +74,12 @@ add_library(
   tasks/quadrotor/quadrotor.h
   tasks/quadruped/quadruped.cc
   tasks/quadruped/quadruped.h
+  # (CUSTOM)
+  tasks/gymnasium_swimmer/gymnasium_swimmer.cc
+  tasks/gymnasium_swimmer/gymnasium_swimmer.h
+  tasks/gymnasium_inverted_pendulum/gymnasium_inverted_pendulum.cc
+  tasks/gymnasium_inverted_pendulum/gymnasium_inverted_pendulum.h
+  # ----
   tasks/swimmer/swimmer.cc
   tasks/swimmer/swimmer.h
   tasks/walker/walker.cc

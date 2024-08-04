@@ -40,7 +40,7 @@ renderer = mujoco.Renderer(model)
 
 # %%
 # agent
-agent = agent_lib.Agent(task_id="Cartpole", model=model)
+agent = agent_lib.Agent(task_id="Cartpoler", model=model)
 
 # weights
 agent.set_cost_weights({"Velocity": 0.15})
