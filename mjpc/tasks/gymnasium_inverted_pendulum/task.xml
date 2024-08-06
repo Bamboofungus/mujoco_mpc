@@ -26,7 +26,7 @@
 
   <sensor>
     <!-- cost -->
-    <user name="Vertical" dim="1" user="0 100.0 0 100.0 0.01"/>
+    <user name="Vertical" dim="1" user="0 100.0 0 1000.0 1"/>
     <user name="Centered" dim="1" user="6 1.0 0 100.0 0.1"/>
     <user name="Velocity" dim="1" user="0 0.1 0.0 1.0"/>
     <!-- <user name="Control" dim="1" user="0 0.1 0.0 1.0"/> -->
@@ -36,11 +36,11 @@
     <jointpos name="hinge_pos" joint="hinge"/>
 
     <!-- trace -->
-    <framepos name="trace0" objtype="site" objname="tip"/>
+    <!-- <framepos name="trace0" objtype="site" objname="tip"/> -->
 
     <!-- residual -->
-    <framepos name="position" objtype="site" objname="tip"/>
-    <framelinvel name="velocity" objtype="site" objname="tip"/>
+    <!-- <framepos name="position" objtype="site" objname="tip"/> -->
+    <!-- <framelinvel name="velocity" objtype="site" objname="tip"/> -->
   </sensor>
 
   <keyframe>
